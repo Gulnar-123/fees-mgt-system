@@ -4,10 +4,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.innovation.FeesMgtSystemBackend.model.Register;
+import com.innovation.FeesMgtSystemBackend.model.Fee;
 
 @Repository
-@Qualifier("regRepo")
-public interface RegisterRepository extends JpaRepository<Register, Long>{
-Register findByEmailAndPassword(String email,String password);
+@Qualifier("feeRepo")
+public interface FeeRepository extends JpaRepository<Fee, Integer>{
+
 }
