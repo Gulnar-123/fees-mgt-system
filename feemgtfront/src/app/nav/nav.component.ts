@@ -1,13 +1,42 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, CommonModule],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css'
 })
-export class NavComponent {
+export class NavComponent implements OnInit {
+  
+  usertype="guest"
+  constructor(private router:Router)
+  {
+
+  }
+  ngOnInit(): void {
+    this.router.events.subscribe((val:any)=>{
+      if(val.url)
+      {
+  let e=localStorage.getItem("email")
+  console.log("email="+e)
+  if(e!=null)
+    {
+      this.usertype="user"
+    }
+    else
+    this.usertype="guest"
+  }});
+
+  }
+
+logout()
+{
+  localStorage.removeItem("email")
+  localStorage.removeItem("name")
+this.router.navigate(["/"])
+}
 
 }

@@ -3,11 +3,20 @@
       <div class="navbar-header">
         <a class="navbar-brand" routerLink="/">Innovation</a>
       </div>
-      <ul class="nav navbar-nav">
+      <div [ngSwitch]="usertype">
+      <ul class="nav navbar-nav" *ngSwitchCase="'guest'">
         <li class="active"><a routerLink="/">Home</a></li>
         <li><a routerLink="/register">Register</a></li>
         <li><a routerLink="/login">Student Login</a></li>
         <li><a routerLink="/adminlogin">Admin Login</a></li>
       </ul>
+      <ul class="nav navbar-nav" *ngSwitchCase="'user'">
+        <li class="active"><a routerLink="/">Home</a></li>
+        <li><a routerLink="/admission">Admission</a></li>
+        <li><a routerLink="/feereport">Fee report</a></li>
+        <li><a (click)="logout()">Logout</a></li>
+       
+      </ul>
+    </div>
     </div>
   </nav>

@@ -50,8 +50,8 @@ if(opt.isPresent())
 	}
 
 	@Override
-	public Course search(int id) {
-		Optional<Course> opt=couRepo.findById(id);
+	public Course search(String cn) {
+		Optional<Course> opt=couRepo.findByCname(cn);
 		if(opt.isPresent())
 		{
 			Course cold=opt.get();

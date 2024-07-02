@@ -9,5 +9,5 @@ Course insert(Course c);
 List<Course> getAll();
 void delete(int cid);
 Course update(int id,Course c);
-Course search(int id);
+Course search(String cn);
 }

@@ -1,0 +1,28 @@
+<h1 class="text-center">Admission Form</h1>
+<form (ngSubmit)="submitdata()">
+    
+      <div class="form-group">
+        <label for="sel1">Course Name</label>
+        <select class="form-control" id="coursename" name="coursename" [(ngModel)]="ad.coursenm" (change)="show(ad.coursenm)">
+          <option>--select--</option>
+          <option *ngFor="let c of cou" value="{{c.cname}}">{{c.cname}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="fees">Fees:</label>
+        <input type="text" class="form-control" id="fees" name="fees" [(ngModel)]="selcou.fees"  readonly>
+      </div>
+      <div class="form-group">
+        <label for="duration">Duration:</label>
+        <input type="text" class="form-control" id="duration" name="duration" [(ngModel)]="selcou.duration" readonly>
+      </div>
+      <div class="form-group">
+        <label for="collegename">College Name:</label>
+        <input type="text" class="form-control" id="collegename" name="collegename" [(ngModel)]="ad.collegenm">
+      </div>
+      <div class="form-group">
+        <label for="qualification">Qualification:</label>
+        <input type="text" class="form-control" id="qualification" name="qualification" [(ngModel)]="ad.qualification">
+      </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+</form>

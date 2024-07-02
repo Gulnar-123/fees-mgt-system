@@ -45,9 +45,9 @@ public class CourseController {
 	{
 		return cs.update(cid, c);
 	}
-	@GetMapping("/course/{cid}")
-public Course search(@PathVariable("cid")int cid)
+	@GetMapping("/course/{cn}")
+public Course search(@PathVariable("cn")String  cn)
 {
-		return cs.search(cid);
+		return cs.search(cn);
 }
 }
