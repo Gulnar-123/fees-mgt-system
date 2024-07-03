@@ -1,0 +1,25 @@
+<h1 class="text-center">Add Fee Receipt Here</h1>
+<form (ngSubmit)="submitdata()">
+    <div class="form-group">
+        <label for="email">Email Id:</label>
+        <input type="email" class="form-control" id="nm" name="cname" [(ngModel)]="f.email">
+      </div>
+    <div class="form-group">
+        <label for="name">Course Name:</label>
+        <input type="text" class="form-control" id="nm" name="cname" [(ngModel)]="f.cname">
+      </div>
+      <div class="form-group">
+        <label for="total">Total :</label>
+        <input type="text" class="form-control" id="total" name="total" [(ngModel)]="f.total">
+      </div>
+      <div class="form-group">
+        <label for="Paid">Paid :</label>
+        <input type="text" class="form-control" id="paid" name="paid" [(ngModel)]="f.paid">
+      </div>
+      <div class="form-group">
+        <label for="remaining">Remaining :</label>
+        <input type="text" class="form-control" id="remaining" name="remaining" [(ngModel)]="f.remaining">
+      </div>
+      
+      <button type="submit" class="btn btn-default">Submit</button>
+</form>

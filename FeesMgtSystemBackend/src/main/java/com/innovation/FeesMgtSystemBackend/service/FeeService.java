@@ -7,4 +7,5 @@ import com.innovation.FeesMgtSystemBackend.model.Fee;
 public interface FeeService {
 Fee insert(Fee f);
 List<Fee> getAll();
+List<Fee> getAllByemail(String e);
 }

@@ -3,6 +3,8 @@ import { Register } from '../models/register';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Admission } from '../models/admission';
+import { Course } from '../models/course';
+import { CourseAdmission } from '../models/courseadmission';
 
 @Injectable({
   providedIn: 'root'
@@ -17,5 +19,9 @@ export class AdmissionService {
   getAll():Observable<Admission[]>
   {
     return this.http.get<Admission[]>(this.serverurl+"/admission")
+  }
+  getAllByEmail(e:string):Observable<CourseAdmission[]>
+  {
+    return this.http.get<CourseAdmission[]>(this.serverurl+"/admission/"+e)
   }
 }

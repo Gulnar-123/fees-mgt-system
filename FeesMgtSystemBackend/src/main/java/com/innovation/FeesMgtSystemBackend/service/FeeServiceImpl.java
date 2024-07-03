@@ -27,4 +27,10 @@ public class FeeServiceImpl implements FeeService {
 		return feeRepo.findAll();
 	}
 
+	@Override
+	public List<Fee> getAllByemail(String e) {
+		// TODO Auto-generated method stub
+				return feeRepo.findAllByEmail(e);
+	}
+
 }

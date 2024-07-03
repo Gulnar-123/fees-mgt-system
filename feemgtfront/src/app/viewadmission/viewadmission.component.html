@@ -1,0 +1,24 @@
+<h1 class="text-center">Admissions</h1>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Admission Id</th>
+            <th>Email</th>
+            <th>Course Name</th>
+            <th>College Name</th>
+            <th>Qualification</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let c of adm">
+            <td>
+                {{c.admid}}
+            </td>
+            <td>{{c.email}}</td>
+            <td>{{c.coursenm}}</td>
+            <td>{{c.collegenm}}</td>
+            <td>{{c.qualification}}</td>
+        </tr>
+    </tbody>
+</table>

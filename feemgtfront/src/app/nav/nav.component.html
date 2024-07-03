@@ -17,6 +17,15 @@
         <li><a (click)="logout()">Logout</a></li>
        
       </ul>
+      <ul class="nav navbar-nav" *ngSwitchCase="'admin'">
+        <li class="active"><a routerLink="/">Home</a></li>
+        <li><a routerLink="/addcourse">Add Course</a></li>
+        <li><a routerLink="/vadmission">View Admission</a></li>
+        <li><a routerLink="/vfees">View Fees</a></li>
+        <li><a routerLink="/feeform">Fee Submission</a></li>
+        <li><a (click)="alogout()">Logout</a></li>
+       
+      </ul>
     </div>
     </div>
   </nav>

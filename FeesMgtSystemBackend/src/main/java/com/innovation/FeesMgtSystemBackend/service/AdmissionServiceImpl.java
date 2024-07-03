@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.innovation.FeesMgtSystemBackend.model.Admission;
 import com.innovation.FeesMgtSystemBackend.repository.AdmissionRepository;
+import com.innovation.FeesMgtSystemBackend.repository.CourseAdmission;
 
 @Service
 public class AdmissionServiceImpl implements AdmissionService {
@@ -25,6 +26,12 @@ AdmissionRepository admRepo;
 	public List<Admission> getAll() {
 		// TODO Auto-generated method stub
 		return admRepo.findAll();
+	}
+
+	@Override
+	public List<CourseAdmission> getAllByEmail(String e) {
+		// TODO Auto-generated method stub
+				return admRepo.findAllCoursesByEmail(e);
 	}
 	
 

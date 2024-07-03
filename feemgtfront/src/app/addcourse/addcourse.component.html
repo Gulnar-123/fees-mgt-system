@@ -1,0 +1,16 @@
+<h1 class="text-center">Add Course Here</h1>
+<form (ngSubmit)="submitdata()">
+    <div class="form-group">
+        <label for="name">Course Name:</label>
+        <input type="text" class="form-control" id="nm" name="cname" [(ngModel)]="cou.cname">
+      </div>
+      <div class="form-group">
+        <label for="duration">Duration :</label>
+        <input type="text" class="form-control" id="duration" name="duration" [(ngModel)]="cou.duration">
+      </div>
+      <div class="form-group">
+        <label for="fee">Fee:</label>
+        <input type="text" class="form-control" id="fee" name="fee" [(ngModel)]="cou.fees">
+      </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+</form>

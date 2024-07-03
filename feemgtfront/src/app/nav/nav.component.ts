@@ -27,7 +27,15 @@ export class NavComponent implements OnInit {
       this.usertype="user"
     }
     else
-    this.usertype="guest"
+    {
+      
+  let ae=localStorage.getItem("aemail")
+  if(ae!=null)
+    this.usertype="admin"
+  else
+this.usertype="guest"
+    }
+    
   }});
 
   }
@@ -39,4 +47,10 @@ logout()
 this.router.navigate(["/"])
 }
 
+alogout()
+{
+  localStorage.removeItem("aemail")
+ 
+this.router.navigate(["/"])
+}
 }

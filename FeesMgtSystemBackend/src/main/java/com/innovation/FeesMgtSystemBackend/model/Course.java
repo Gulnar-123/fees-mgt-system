@@ -46,6 +46,10 @@ private int cid;
 	public void setFees(int fees) {
 		this.fees = fees;
 	}
+	@Override
+	public String toString() {
+		return "Course [cid=" + cid + ", cname=" + cname + ", duration=" + duration + ", fees=" + fees + "]";
+	}
 	
 
 }
