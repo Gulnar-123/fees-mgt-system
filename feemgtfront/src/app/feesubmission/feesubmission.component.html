@@ -2,11 +2,17 @@
 <form (ngSubmit)="submitdata()">
     <div class="form-group">
         <label for="email">Email Id:</label>
-        <input type="email" class="form-control" id="nm" name="cname" [(ngModel)]="f.email">
+        <select class="form-control" id="nm" name="cname" [(ngModel)]="f.email" (change)="showcourses()">
+          <option>--select--</option>
+          <option *ngFor="let a of ad" value="{{a.email}}">{{a.email}}</option>
+          </select>
       </div>
     <div class="form-group">
         <label for="name">Course Name:</label>
-        <input type="text" class="form-control" id="nm" name="cname" [(ngModel)]="f.cname">
+        <select class="form-control" id="nm" name="cname" [(ngModel)]="f.cname" (change)="showtotal(f.cname)">
+          <option>--select--</option>
+          <option *ngFor="let a of ad1" value="{{a.cname}}">{{a.cname}}</option>
+          </select>
       </div>
       <div class="form-group">
         <label for="total">Total :</label>
@@ -14,7 +20,7 @@
       </div>
       <div class="form-group">
         <label for="Paid">Paid :</label>
-        <input type="text" class="form-control" id="paid" name="paid" [(ngModel)]="f.paid">
+        <input type="text" class="form-control" id="paid" name="paid" [(ngModel)]="f.paid" (change)="calremain()">
       </div>
       <div class="form-group">
         <label for="remaining">Remaining :</label>

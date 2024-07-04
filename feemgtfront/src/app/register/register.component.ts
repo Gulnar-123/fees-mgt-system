@@ -3,11 +3,12 @@ import { Register } from '../models/register';
 import { FormsModule } from '@angular/forms';
 import { RegisterService } from '../services/register.service';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,CommonModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
@@ -18,8 +19,10 @@ constructor(private rs :RegisterService,private router:Router)
 
 }
 
-submitdata()
+submitdata(regfrm:any)
 {
+  if(regfrm.valid)
+    {
 this.rs.insert(this.reg).subscribe((data:Register)=>{
   if(data!=null)
     {
@@ -27,5 +30,9 @@ this.rs.insert(this.reg).subscribe((data:Register)=>{
       this.router.navigate(["/login"])
     }
 })
+}
+
+else
+alert("Please input valid data")
 }
 }

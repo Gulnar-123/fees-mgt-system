@@ -1,13 +1,26 @@
 <h1 class="text-center">Login Form</h1>
-<form (ngSubmit)="submitdata()">
-   
-    <div class="form-group">
-        <label for="">Email address:</label>
-        <input type="email" class="form-control" id="email" name="email" [(ngModel)]="reg.email">
-      </div>
+<form #logfrm="ngForm" (ngSubmit)="submitdata(logfrm)">
       <div class="form-group">
-        <label for="pwd">Password:</label>
-        <input type="password" class="form-control" id="pwd" name="password" [(ngModel)]="reg.password">
-      </div>
+        <label for="">Email address:</label>
+        <input type="email" class="form-control" id="email" name="email" #email="ngModel" [(ngModel)]="reg.email" required>
+        <div *ngIf="!email.valid" style="color: red;">
+          <div *ngIf="email.errors?.['required']">
+            email cannot be empty
+          </div>
+          <div *ngIf="email.errors?.['email']">
+            enter valid email id
+          </div>
+    
+        </div>
+        </div>
+        <div class="form-group">
+          <label for="pwd">Password:</label>
+          <input type="password" class="form-control" id="pwd" name="password" #pass="ngModel" [(ngModel)]="reg.password"  required>
+          <div *ngIf="!pass.valid" style="color: red;">
+            <div *ngIf="pass.errors?.['required']">
+              password can not be blank
+            </div>
+          </div>
+        </div>
         <button type="submit" class="btn btn-default">Submit</button>
 </form>
